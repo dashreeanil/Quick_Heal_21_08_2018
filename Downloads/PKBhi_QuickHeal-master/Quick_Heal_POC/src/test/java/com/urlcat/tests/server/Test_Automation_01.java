@@ -89,6 +89,8 @@ public class Test_Automation_01 {
 				status = true;
 			}
 		}
+		 GenericLib.verifyModifiedCategory("M");
+		 
 		test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
 		test.addScreenCaptureFromPath("screenshot.png");
 		extent.flush();

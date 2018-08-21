@@ -16,7 +16,7 @@ public class Test_Automation_ResetData {
 		String sCategory[] = GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,
 				GenericLib.sCacheSheetName, "Category", 2);
 		String flag = "M";
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < sCategory.length; i++) {
 			GenericLib.setCellData(GenericLib.sServerDataFilePath, GenericLib.sServerSheetName, 2, "A", i + 1);
 			GenericLib.setCellData(GenericLib.sServerDataFilePath, GenericLib.sServerSheetName, 3, "12", i + 1);
 			

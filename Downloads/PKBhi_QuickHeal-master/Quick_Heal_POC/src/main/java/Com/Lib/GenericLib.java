@@ -33,9 +33,9 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class GenericLib{	
 	static Logger logger;
-	public static String sCacheDataFilePath ="C:\\Users\\dashree\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
-	public static String sServerDataFilePath = "C:\\Users\\dashree\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
-	public static String sInputDataFilePath ="C:\\Users\\dashree\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
+	public static String sCacheDataFilePath ="C:\\Users\\TYSS\\Downloads\\Quick_Heal_21_08_2018-master\\Quick_Heal_21_08_2018-master\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
+	public static String sServerDataFilePath = "C:\\Users\\TYSS\\Downloads\\Quick_Heal_21_08_2018-master\\Quick_Heal_21_08_2018-master\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
+	public static String sInputDataFilePath ="C:\\Users\\TYSS\\Downloads\\Quick_Heal_21_08_2018-master\\Quick_Heal_21_08_2018-master\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
 	public static String sInputSheetName ="Input";
 	public static String sServerSheetName ="Server";
 	public static String sCacheSheetName ="Cache";
@@ -786,13 +786,57 @@ public class GenericLib{
 					test.log(Status.INFO, "Server Category has been changed to ----> "+count++);
 					GenericLib.setCellData(GenericLib.sServerDataFilePath, GenericLib.sServerSheetName, 5, TestUtil.generateTimeStamp(),j+1);
 					test.log(Status.INFO, "Server Time Stamp has been changed to ----> "+TestUtil.generateTimeStamp());
+					
 
 				}
 			}
+			
 		}
 		test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
 		test.addScreenCaptureFromPath("screenshot.png");
 		extent.flush();
+	}
+	
+	
+	public static void verifyModifiedCategory(String domainFlag) throws Exception
+	{
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("./Reports/Client/cacheRefreshRequest_verify_Modified_Category.html");
+		ExtentReports extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+		ExtentTest test = extent.createTest("verifyModifiedCategory", "verificataion of Url Category");
+		String rUrl[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath, sCacheSheetName,sCacheCoulmnUrlName,0);
+		String rDomainFlag[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath,sCacheSheetName,sCacheCoulmnDomainFlagName,1);
+		String sUrl[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sServerSheetName,sServerCoulmnUrlName,1);
+		String sDomainFlag[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName, "DomainFlag",2);
+		String sCategory[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sServerSheetName, "Category",3);
+		for(int i=0;i<sUrl.length;i++)
+		{
+			for(int j=0;j<rUrl.length;j++)
+			{
+			if(sDomainFlag[i].equals(domainFlag)){
+			
+				if(sUrl[i].equals(rUrl[j]))
+				{
+					try{
+						Assert.assertEquals(domainFlag, rDomainFlag[j], "Domain flag successfully updated to "+rDomainFlag[j]);
+						System.out.println("Domain flag successfully updated to "+rDomainFlag[j]);
+						test.log(Status.INFO, "Domain flag successfully updated to "+rDomainFlag[j]);
+					}
+					catch (Exception e) {
+						// TODO: handle exception
+						System.out.println("domain flags are mismatched");
+					}
+					}
+				
+				}
+			
+			}
+			test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
+			test.addScreenCaptureFromPath("screenshot.png");
+			extent.flush();
+		}
+		
+		
 	}
 	 
 }

@@ -37,7 +37,7 @@ public static String mailscreenshotpath;
 		  int date = cal.get(Calendar.DATE);
 		  int day =cal.get(Calendar.HOUR_OF_DAY);
 		
-		String timestamp = year+"_"+date+"_"+(month+1)+"_"+day+"_"+min+"_" +sec;
+		String timestamp = year+"/"+date+"/"+(month+1)+" "+day+":"+min+":" +sec;
 		return timestamp;
 	}
 
