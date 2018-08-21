@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6973" started-at="2018-08-20T18:47:20Z" finished-at="2018-08-20T18:47:26Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6973" started-at="2018-08-20T18:47:20Z" finished-at="2018-08-20T18:47:26Z">
+      <class name="com.urlcat.tests.server.Test_Automation_01">
+        <test-method status="PASS" signature="updateFromServer()" name="updateFromServer" duration-ms="6941" started-at="2018-08-20T18:47:20Z" finished-at="2018-08-20T18:47:26Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>
