@@ -34,11 +34,11 @@ public class Test_Automation_01 {
 			if(urlInfo!=null){
 				
 			GenericLib.setLastCellDataUrl(GenericLib.sCacheDataFilePath,GenericLib.sCacheSheetName , GenericLib.sCacheCoulmnUrlName, urlInfo[1], 0);
-			test.log(Status.INFO, "Url has been updated to cache"+urlInfo[1]);
+			test.log(Status.INFO, "Url has been updated to cache "+urlInfo[1]);
 			GenericLib.setLastCellDataCatagory(GenericLib.sCacheDataFilePath,GenericLib.sCacheSheetName, GenericLib.sCacheCoulmnCategoryName,urlInfo[3],2);
-			test.log(Status.INFO, "Category has been updated to cache--->"+urlInfo[3]);
+			test.log(Status.INFO, "Category has been updated to cache---> "+urlInfo[3]);
 			GenericLib.setLastCellDataDomain(GenericLib.sCacheDataFilePath,GenericLib.sCacheSheetName,GenericLib.sCacheCoulmnDomainFlagName,urlInfo[2],1);
-			test.log(Status.INFO, "Domain Flag has been updated to cache--->"+urlInfo[2]);
+			test.log(Status.INFO, "Domain Flag has been updated to cache---> "+urlInfo[2]);
 			Assert.assertEquals(urlInfo[1], sdata[i]);
 			}
 		}

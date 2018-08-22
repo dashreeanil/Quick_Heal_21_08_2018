@@ -24,6 +24,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -33,12 +34,13 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class GenericLib{	
 	static Logger logger;
-	public static String sCacheDataFilePath ="C:\\Users\\TYSS\\Downloads\\Quick_Heal_21_08_2018-master\\Quick_Heal_21_08_2018-master\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
-	public static String sServerDataFilePath = "C:\\Users\\TYSS\\Downloads\\Quick_Heal_21_08_2018-master\\Quick_Heal_21_08_2018-master\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
-	public static String sInputDataFilePath ="C:\\Users\\TYSS\\Downloads\\Quick_Heal_21_08_2018-master\\Quick_Heal_21_08_2018-master\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
+	public static String sCacheDataFilePath ="C:\\Users\\dashree\\git5\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
+	public static String sServerDataFilePath = "C:\\Users\\dashree\\git5\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
+	public static String sInputDataFilePath ="C:\\Users\\dashree\\git5\\Downloads\\PKBhi_QuickHeal-master\\Quick_Heal_POC\\src\\main\\resources\\data\\URLCATData.xlsx";
 	public static String sInputSheetName ="Input";
 	public static String sServerSheetName ="Server";
 	public static String sCacheSheetName ="Cache";
+	public static String sMasterServerSheetName ="MasterServer";
 	public static String sCacheCoulmnUrlName="Url";
 	public static String sCacheCoulmnCategoryName ="Category";
 	public static String sCacheCoulmnDomainFlagName ="DomainFlag";
@@ -735,12 +737,13 @@ public class GenericLib{
 		String sUrl[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sServerSheetName,sServerCoulmnUrlName,1);
 		String sDomainFlag[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName, "DomainFlag",2);
 		String sCategory[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sServerSheetName, "Category",3);
+		String sTimeStamp[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath,sCacheSheetName,sCacheCoulmnDomainFlagName,5);
 		for(int i=0;i<rUrl.length;i++){
 			for(int j=0;j<sUrl.length;j++){
 				if(rUrl[i].equals(sUrl[j])){
 					if(rDomainFlag[i].equals(sDomainFlag[j])){
-						System.out.println("Category is not changed"+"-->"+rUrl[i]);
-						test.log(Status.INFO, "Category is not changed"+"-->"+rUrl[i]);
+						System.out.println("Category is not changed"+"--> "+rUrl[i]);
+						test.log(Status.INFO, "Category is not changed"+"--> "+rUrl[i]);
 
 						
 						break;
@@ -749,8 +752,9 @@ public class GenericLib{
 					else{
 						GenericLib.setCellData(GenericLib.sCacheDataFilePath,sCacheSheetName,1,sDomainFlag[j] ,i+1) ;
 						GenericLib.setCellData(GenericLib.sCacheDataFilePath,sCacheSheetName,2,sCategory[j] ,i+1) ;
-						System.out.println("Category is updated changed"+"-->"+sDomainFlag[j]);
-						test.log(Status.INFO, "Category is updated changed"+"-->"+sDomainFlag[j]);
+						GenericLib.setCellData(GenericLib.sCacheDataFilePath,sCacheSheetName,3,sTimeStamp[j] ,i+1) ;
+						System.out.println("Category is updated changed"+"--> "+sDomainFlag[j]);
+						test.log(Status.INFO, "Category is updated changed"+"--> "+sDomainFlag[j]);
 						break;
 					}
 				}
@@ -838,6 +842,41 @@ public class GenericLib{
 		
 		
 	}
+	
+	public static void validateDomain() throws Exception
+	{
+		String sUrl[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sServerSheetName,sServerCoulmnUrlName,1);
+		String sDomainFlag[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName, "DomainFlag",2);
+		String sCategory[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sServerSheetName, "Category",3);
+		String sTimeStamp[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath,sCacheSheetName,sCacheCoulmnDomainFlagName,5);
+		String sMasterUrl[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sMasterServerSheetName,sServerCoulmnUrlName,0);
+		String sMasterDomainFlag[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sMasterServerSheetName, "DomainFlag",1);
+		String sMasterCategory[]=GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath,sMasterServerSheetName, "Category",2);
+		String sMasterTimeStamp[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath,sMasterServerSheetName,sCacheCoulmnDomainFlagName,3);
+		for(int i=0;i<sMasterUrl.length;i++)
+		{
+			for(int j =0;j<sUrl.length;j++)
+			{
+				if("M".equalsIgnoreCase(sDomainFlag[j]))
+				{
+					for(int k=0;k<sMasterUrl.length;k++)
+					{
+					if(sUrl[i].contentEquals(sMasterUrl[k]))
+					{
+					GenericLib.setCellData(GenericLib.sCacheDataFilePath,sMasterServerSheetName,1,sDomainFlag[k] ,i+1) ;
+					GenericLib.setCellData(GenericLib.sCacheDataFilePath,sMasterServerSheetName,2,sCategory[k] ,i+1) ;
+					GenericLib.setCellData(GenericLib.sCacheDataFilePath,sMasterServerSheetName,3,sTimeStamp[k] ,i+1) ;
+					System.out.println("Category is updated changed"+"--> "+sDomainFlag[j]);
+					}
+				}	
+				}
+			
+				}
+			}
+			
+		}
+
+	
 	 
 }
 

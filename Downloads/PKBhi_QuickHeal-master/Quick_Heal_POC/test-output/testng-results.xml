@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6973" started-at="2018-08-20T18:47:20Z" finished-at="2018-08-20T18:47:26Z">
+  <suite name="Default suite" duration-ms="1860" started-at="2018-08-22T14:28:32Z" finished-at="2018-08-22T14:28:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6973" started-at="2018-08-20T18:47:20Z" finished-at="2018-08-20T18:47:26Z">
-      <class name="com.urlcat.tests.server.Test_Automation_01">
-        <test-method status="PASS" signature="updateFromServer()" name="updateFromServer" duration-ms="6941" started-at="2018-08-20T18:47:20Z" finished-at="2018-08-20T18:47:26Z">
+    <test name="Default test" duration-ms="1860" started-at="2018-08-22T14:28:32Z" finished-at="2018-08-22T14:28:34Z">
+      <class name="com.urlcat.demo.Demo">
+        <test-method status="PASS" signature="demo()" name="demo" duration-ms="1842" started-at="2018-08-22T14:28:32Z" finished-at="2018-08-22T14:28:34Z">
         </test-method>
       </class>
     </test>
