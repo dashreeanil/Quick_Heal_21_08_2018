@@ -1,13 +1,13 @@
-package com.urlcat.demo;
+package com.urlcat.tests.subdomiancheck;
 
 import org.testng.annotations.Test;
 
 import Com.Lib.GenericLib;
 
-public class Demo {
+public class SubDomainCheck {
 
 	@Test
-	public void demo() throws Exception
+	public void subDomainCheck() throws Exception
 	{
 		GenericLib.validateDomain("M", "./Reports/MasterServerDomain_Updation.html", "validateDomain", "Updating the domain urls in Master server");
 		GenericLib.mServerToCache("M","./Reports/ServerDomain_Updation.html", "mServerToCache", "Updating the domain urls in server");
@@ -19,3 +19,4 @@ public class Demo {
 		
 	}
 }
+

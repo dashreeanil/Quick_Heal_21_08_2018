@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1860" started-at="2018-08-22T14:28:32Z" finished-at="2018-08-22T14:28:34Z">
+  <suite name="Default suite" duration-ms="80657" started-at="2018-08-22T18:02:03Z" finished-at="2018-08-22T18:03:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1860" started-at="2018-08-22T14:28:32Z" finished-at="2018-08-22T14:28:34Z">
+    <test name="Default test" duration-ms="80657" started-at="2018-08-22T18:02:03Z" finished-at="2018-08-22T18:03:24Z">
       <class name="com.urlcat.demo.Demo">
-        <test-method status="PASS" signature="demo()" name="demo" duration-ms="1842" started-at="2018-08-22T14:28:32Z" finished-at="2018-08-22T14:28:34Z">
+        <test-method status="PASS" signature="demo()" name="demo" duration-ms="80637" started-at="2018-08-22T18:02:03Z" finished-at="2018-08-22T18:03:24Z">
         </test-method>
       </class>
     </test>

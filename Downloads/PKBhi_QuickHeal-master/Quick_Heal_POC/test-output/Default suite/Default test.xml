@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="dashree-PC" name="com.urlcat.demo.Demo" tests="1" failures="0" timestamp="22 Aug 2018 08:58:34 GMT" time="1.86" errors="0">
-  <testcase name="demo" time="1.842" classname="com.urlcat.demo.Demo"/>
+<testsuite hostname="dashree-PC" name="com.urlcat.demo.Demo" tests="1" failures="0" timestamp="22 Aug 2018 12:33:24 GMT" time="80.657" errors="0">
+  <testcase name="demo" time="80.637" classname="com.urlcat.demo.Demo"/>
 </testsuite>

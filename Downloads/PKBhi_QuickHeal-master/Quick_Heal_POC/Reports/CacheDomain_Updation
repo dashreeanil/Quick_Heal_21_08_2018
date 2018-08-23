@@ -46,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Aug 22, 2018 03:40:39 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Aug 22, 2018 05:27:13 PM</span>
 				</a>
 			</li>
 			<li>
@@ -137,10 +137,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='3.226%'><span class='strong'>1</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='2.703%'><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='96.774%'>30</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='97.297%'>36</span> others
 				</div>
 			</div>
 		</div>
@@ -155,19 +155,18 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='38'>
 					<div class='test-heading'>
-						<span class='test-name'>updateFromServer</span>
-						<span class='test-time'>Aug 22, 2018 03:40:39 PM</span>
+						<span class='test-name'>Updating the domain urls in cache</span>
+						<span class='test-time'>Aug 22, 2018 05:27:13 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Aug 22, 2018 03:40:39 PM</span>
-	<span class='label end-time'>Aug 22, 2018 03:40:47 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+334ms</span>
+	<span class='label start-time'>Aug 22, 2018 05:27:13 PM</span>
+	<span class='label end-time'>Aug 22, 2018 05:27:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+186ms</span>
 </div>
-	<div class='test-desc'>Test to validate Server response refresh </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
 			<thead>
@@ -180,157 +179,187 @@
 			<tbody>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:40 PM</td>
-					<td class='step-details'>Server Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.amazon.com/amazon-fashion</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Category has been modified to ----> 12</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.udemy.com/complete-wordpress-course</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Time Stamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.udemy.com/courses/development</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.udemy.com/complete-python-bootcamp</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Category has been modified to ----> 13</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.udemy.com/the-complete-guide-to-angular-2</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Time Stamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.amazon.com/gp/video</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.ndtv.com/news</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Category has been modified to ----> 14</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.ndtv.com/india-news/centre-plans-ahead-as-indias-elderly-population-to-cross-340-million-by-2050-1898381</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Time Stamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.yahoo.com/news</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.yahoo.com/news/harley-looking-guide-come-hand-140122669.html</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:41 PM</td>
-					<td class='step-details'>Server Category has been modified to ----> 15</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.finance.yahoo.com/news/assassins-creed-odyssey-preview-unleash-inner-spartan-213608650.html</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:42 PM</td>
-					<td class='step-details'>Server Time Stamp has been modified to ----> 2018-22-8  15:40:42</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.indiaeducationdiary.in/category/book-literature</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:42 PM</td>
-					<td class='step-details'>Server Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.indiaeducationdiary.in/category/state-news/delhi</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:42 PM</td>
-					<td class='step-details'>Server Category has been modified to ----> 16</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.seleniumhq.org/download/maven.jsp</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:42 PM</td>
-					<td class='step-details'>Server Time Stamp has been modified to ----> 2018-22-8  15:40:42</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.mvnrepository.com/artifact/org.seleniumhq.selenium</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.mvnrepository.com/artifact/io.rest-assured/rest-assured</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Category has been modified to ----> 13</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache TimeStamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.mvnrepository.com/artifact/org.testng/testng</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Category has been modified to ----> 15</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.instagram.com/?hl=en</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache TimeStamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.twitter.com/login?lang=en</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.facebook.com/</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Category has been modified to ----> 14</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.web.whatsapp.com/??/en</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache TimeStamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.youtube.com/</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.snapchat.com/</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache Category has been modified to ----> 12</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.snapdeal.com/</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:43 PM</td>
-					<td class='step-details'>Cache TimeStamp has been modified to ----> 2018-22-8  15:40:41</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.flipkart.com/</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:44 PM</td>
-					<td class='step-details'>Cache Domain flag has been modified to ----> M</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.shopclues.com</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:44 PM</td>
-					<td class='step-details'>Cache Category has been modified to ----> 16</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.ebay.in/</td>
 				</tr>
 				<tr class='log' status='info'>
 					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>3:40:44 PM</td>
-					<td class='step-details'>Cache TimeStamp has been modified to ----> 2018-22-8  15:40:42</td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.clubfactory.com/home.html</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.shein.in/</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.timesofindia.indiatimes.com/</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.inshorts.com/</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.aajtak.intoday.in/</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.zeenews.india.com/</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>5:27:13 PM</td>
+					<td class='step-details'>Category is not changed--> www.indiatoday.in/</td>
 				</tr>
 				<tr class='log' status='pass'>
 					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>3:40:47 PM</td>
+					<td class='timestamp'>5:27:13 PM</td>
 					<td class='step-details'>details<img data-featherlight='screenshot.png' width='10%' src='screenshot.png' data-src='screenshot.png'></td>
 				</tr>
 			</tbody>
@@ -382,25 +411,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>31</div>
+					<div class='panel-lead'>37</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Aug 22, 2018 03:40:39 PM</div>
+					<div class='panel-lead'>Aug 22, 2018 05:27:13 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Aug 22, 2018 03:40:47 PM</div>
+			 		<div class='panel-lead'>Aug 22, 2018 05:27:13 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 8s+500ms</div>
+					<div class='panel-lead'>0h 0m 0s+187ms</div>
 				</div>
 			</div>
 		</div>
@@ -427,7 +456,7 @@
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 30,
+				infoChild: 36,
 				exceptionsChild: 0,
 				
 				passGrandChild: 0,
