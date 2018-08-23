@@ -3,9 +3,10 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)" preserve-order="false">
     <classes>
-      <class name="com.urlcat.demo.Demo">
+      <class name="com.urlcat.tests.client.Test_Automation_02">
         <methods>
-          <include name="demo"/>
+          <include name="modifyUrlCategory"/>
+          <include name="updatedCategoryReceived"/>
         </methods>
       </class>
     </classes>

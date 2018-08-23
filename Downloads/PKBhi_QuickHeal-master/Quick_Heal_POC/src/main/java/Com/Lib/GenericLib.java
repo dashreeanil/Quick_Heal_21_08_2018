@@ -941,5 +941,107 @@ public class GenericLib {
                     }
 
     }
+	
+	public static int[] time(String sheetName,int colNum) throws Exception
+	{
+		String curTimeStamp = TestUtil.generateTimeStamp();
+		String []curArr = curTimeStamp.split(" ");
+		 String curTime = curArr[1];
+		 String [] curtimearr = curTime.split(":");
+		 String curhour = curtimearr[1];
+		 int curhr = Integer.parseInt(curhour);
+		 int[] diff = null;
+		String sTimeStamp[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath,sheetName,"TimeStamp",colNum);
+		 for(int i=0;i<sTimeStamp.length;i++)
+		 {
+			 String [] arr = sTimeStamp[i].split(" ");
+			 String serverTime = arr[1];
+			 String [] timearr = serverTime.split(":");
+			 String hour = timearr[1];
+			 int hr = Integer.parseInt(hour);
+			 
+			  diff = new int[curhr-hr];
+			 
+		 }
+		 return diff;
+	}
+	
+	public static int hrCalculater(String timeStamp)
+	{
+		
+		String []curArr = timeStamp.split(" ");
+		String time = curArr[1];
+		System.out.println(time);
+		String timeArr[] = time.split(":");
+		String hr = timeArr[0];
+		System.out.println(hr);
+		int inthr = (int) Double.parseDouble(hr);
+		String min = timeArr[1];
+		System.out.println(min);
+		int intmin = (int) Double.parseDouble(min);
+		String sec = timeArr[2];
+		System.out.println(sec);
+		int intsec = (int) Double.parseDouble(sec);
+		int totalHr = inthr+(intmin/60)+(intsec/3600);
+		return totalHr;
+	}
+	
+	public static void cacheRefreshRequestTimeStamp(String path, String methodName, String testCaseDesc) throws Exception {
+        ExtentReport.initExtentReport(path, methodName, testCaseDesc);
+        String rUrl[] = GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath, sCacheSheetName,
+                        sCacheCoulmnUrlName, 0);
+        String rDomainFlag[] = GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath, sCacheSheetName,
+                        sCacheCoulmnDomainFlagName, 1);
+        String sUrl[] = GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName,
+                        sServerCoulmnUrlName, 1);
+        String sDomainFlag[] = GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName,
+                        "DomainFlag", 2);
+        String sCategory[] = GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName,
+                        "Category", 3);
+        String sTimeStamp[] = GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath, sCacheSheetName,
+                        sCacheCoulmnDomainFlagName, 5);
+
+        int time = 5;
+        for (int i = 0; i < rUrl.length; i++) {
+                for (int j = 0; j < sUrl.length; j++) {
+                        if (rUrl[i].equals(sUrl[j])) {
+                                if (rDomainFlag[i].equals(sDomainFlag[j])) {
+                                        if (time < 3) {
+                                                System.out.println("Category is not changed" + "--> " + rUrl[i]);
+                                                ExtentReport.test.log(Status.INFO,
+                                                                "Category is not updated for the URL " + "--> " + rUrl[i]);
+                                                break;
+                                        } else {
+                                                GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 1, sDomainFlag[j],
+                                                                i + 1);
+                                                GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 2, sCategory[j],
+                                                                i + 1);
+                                                GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 3, sTimeStamp[j],
+                                                                i + 1);
+                                                System.out.println("Category is updated changed" + "--> " + sDomainFlag[j]);
+                                                ExtentReport.test.log(Status.INFO,
+                                                                "Category is updated for the URL " + "--> " + sDomainFlag[j]);
+                                                break;
+                                        }
+                                }
+
+                                else {
+                                        GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 1, sDomainFlag[j],
+                                                        i + 1);
+                                        GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 2, sCategory[j], i + 1);
+                                        GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 3, sTimeStamp[j], i + 1);
+                                        System.out.println("Category is updated changed" + "--> " + sDomainFlag[j]);
+                                        ExtentReport.test.log(Status.INFO,
+                                                        "Category is updated for the URL " + "--> " + sDomainFlag[j]);
+                                        break;
+                                }
+                        }
+                }
+        }
+        ExtentReport.test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
+        ExtentReport.test.addScreenCaptureFromPath("screenshot.png");
+        ExtentReport.extent.flush();
+}
+
 
 }

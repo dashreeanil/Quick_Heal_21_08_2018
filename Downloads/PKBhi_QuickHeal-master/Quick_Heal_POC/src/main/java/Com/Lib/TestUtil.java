@@ -7,7 +7,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -29,17 +31,41 @@ public static String mailscreenshotpath;
 
 	public static String generateTimeStamp(){
 		 
-		Calendar cal = new GregorianCalendar();
-		  int month = cal.get(Calendar.MONTH); //3
-		  int year = cal.get(Calendar.YEAR); //2014
-		  int sec =cal.get(Calendar.SECOND);
-		  int min =cal.get(Calendar.MINUTE);
-		  int date = cal.get(Calendar.DATE);
-		  int day =cal.get(Calendar.HOUR_OF_DAY);
-		
-		String timestamp = year+"-"+date+"-"+(month+1)+"  "+day+":"+min+":" +sec;
-		return timestamp;
+		String timeStamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+		System.out.println(timeStamp);
+		return timeStamp;
 	}
+
+	/**
+	 * add days to date in java
+	 * @param date
+	 * @param days
+	 * @return
+	 */
+	public static Date addDays(Date date, int days) {
+		GregorianCalendar cal = new GregorianCalendar();
+		cal.setTime(date);
+		cal.add(Calendar.DATE, days);
+				
+		return cal.getTime();
+	}
+	
+	/**
+	 * subtract days to date in java
+	 * @param date
+	 * @param days
+	 * @return
+	 */
+	public static Date subtractDays(Date date, int days) {
+		GregorianCalendar cal = new GregorianCalendar();
+		cal.setTime(date);
+		cal.add(Calendar.DATE, -days);
+				
+		return cal.getTime();
+	}
+
+
+
 
 	
 	public static void CaptureScreenshot() throws IOException{
