@@ -757,13 +757,13 @@ public class GenericLib {
 				"DomainFlag", 2);
 		String sCategory[] = GenericLib.readExcelDataOfColumn(GenericLib.sServerDataFilePath, sServerSheetName,
 				"Category", 3);
-		String sTimeStamp[] = GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath, sCacheSheetName,
-				sCacheCoulmnDomainFlagName, 5);
+		String sTimeStamp[] = GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath, sServerSheetName,
+				"TimeStamp", 5);
 		for (int i = 0; i < rUrl.length; i++) {
 			for (int j = 0; j < sUrl.length; j++) {
 				if (rUrl[i].equals(sUrl[j])) {
 					if (rDomainFlag[i].equals(sDomainFlag[j])) {
-						System.out.println("Category is not changed" + "--> " + rUrl[i]);
+						System.out.println("Domain Flag is not changed" + "--> " + rUrl[i]);
 						ExtentReport.test.log(Status.INFO, "Category is not updated for the URL " + "--> " + rUrl[i]);
 
 						break;
@@ -772,17 +772,21 @@ public class GenericLib {
 					else {
 						GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 1, sDomainFlag[j],
 								i + 1);
+						System.out.println("Category is updated changed" + "--> " + sDomainFlag[j]);
+						ExtentReport.test.log(Status.INFO, "Domain Flag is updated for the URL " + "--> " + sDomainFlag[j]);
 						GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 2, sCategory[j], i + 1);
-						GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 3, sTimeStamp[j], i + 1);
 						System.out.println("Category is updated changed" + "--> " + sDomainFlag[j]);
 						ExtentReport.test.log(Status.INFO, "Category is updated for the URL " + "--> " + sDomainFlag[j]);
+						GenericLib.setCellData(GenericLib.sCacheDataFilePath, sCacheSheetName, 3, sTimeStamp[j], i + 1);
+						System.out.println("Category is updated changed" + "--> " + sDomainFlag[j]);
+						ExtentReport.test.log(Status.INFO, "Time Stamp is updated for the URL " + "--> " + sDomainFlag[j]);
 						break;
 					}
 				}
 			}
 		}
-		ExtentReport.test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
-		ExtentReport.test.addScreenCaptureFromPath("screenshot.png");
+/*		ExtentReport.test.pass("details", MediaEntityBuilder.createScreenCaptureFromPath("screenshot.png").build());
+		ExtentReport.test.addScreenCaptureFromPath("screenshot.png");*/
 		ExtentReport.extent.flush();
 	}
 
@@ -944,26 +948,26 @@ public class GenericLib {
 	
 	public static int[] time(String sheetName,int colNum) throws Exception
 	{
-		String curTimeStamp = TestUtil.generateTimeStamp();
-		String []curArr = curTimeStamp.split(" ");
-		 String curTime = curArr[1];
-		 String [] curtimearr = curTime.split(":");
-		 String curhour = curtimearr[1];
-		 int curhr = Integer.parseInt(curhour);
-		 int[] diff = null;
+		int[] newhr = null;
+		 int hr;
 		String sTimeStamp[]=GenericLib.readExcelDataOfColumn(GenericLib.sCacheDataFilePath,sheetName,"TimeStamp",colNum);
+		newhr = new int[sTimeStamp.length];
 		 for(int i=0;i<sTimeStamp.length;i++)
 		 {
-			 String [] arr = sTimeStamp[i].split(" ");
-			 String serverTime = arr[1];
-			 String [] timearr = serverTime.split(":");
-			 String hour = timearr[1];
-			 int hr = Integer.parseInt(hour);
-			 
-			  diff = new int[curhr-hr];
-			 
+			System.out.println(sTimeStamp[i]);
+			 String [] arr = sTimeStamp[i].toString().split(" ");
+			 System.out.println(arr[1]);
+			 String [] serverTime= new String[arr.length];		 
+			 String servertime = arr[1];
+			 System.out.println(serverTime);
+			 String [] timearr = servertime.split(":"); 
+			 String hour = timearr[0];
+			 System.out.println(hour);
+			  hr = Integer.parseInt(hour);
+			  newhr[i] = hr;
+
 		 }
-		 return diff;
+		 return newhr;
 	}
 	
 	public static int hrCalculater(String timeStamp)
